@@ -1,10 +1,7 @@
 public class Perro {
     String nombre;
-    String raza;
-    Integer edad;
+    int edad;
     double peso;
-    boolean vacuna;
-    public String ladrar(){
-        return "Guau";
-    }
+    boolean tiene_vacuna;
+    
 }
