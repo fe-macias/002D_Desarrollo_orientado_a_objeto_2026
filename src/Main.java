@@ -6,6 +6,7 @@ public class Main {
     }
     static void showmenu(){
         Scanner entrada_input = new Scanner(System.in);
+        Character player_character = new Character();
         boolean flag_menu = true;
         System.out.println("****WELCOME TO THE SEVEN KINGDOMS****");
         while (flag_menu) {
@@ -19,11 +20,21 @@ public class Main {
             switch (user_option) {
                 case "1":
                     System.out.println("Creating character");
-                    Character player_character = new Character();
-                    String player_character.name = entrada_input.nextLine();
+                    // Nombre del personae
+                    System.out.println("Enter the name :");
+                    player_character.name = entrada_input.nextLine();
+                    // health character
+                    System.out.println("Ingrese los puntos de vida:");
+                    player_character.hit_points = Integer.parseInt(entrada_input.nextLine());
+                    //  points magic
+                    System.out.println("Ingrese los puntos magicos : :");
+                    player_character.magic_points = Integer.parseInt(entrada_input.nextLine());
                     break;
                 case "2":
                     System.out.println("Ver personaje");
+                    System.out.println("Nombre :" + player_character.name);
+                    System.out.println("HP :" + player_character.hit_points);
+                    System.out.println("MP :" + player_character.magic_points);
                     break;
                 case "3":
                     System.out.println("Gracias por jugar");
