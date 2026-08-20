@@ -24,19 +24,20 @@ public class Character {
     public String validarNombre(String name){
         name.toUpperCase();
         switch (name) {
-            case "weon":
-                return "****";
-                break;
-            case "macaco":
-                return "*****";
-            case "nigga":
-                return "*****";
-            case ""
-        
+            case "WEON":
+                this.name = "**O*";
+            case "MACACO":
+                this.name = "****C*";
+            case "NIGGA":
+                this.name = "*****";
+            case "PUTA":
+                this.name = "**U**";
             
             default:
                 break;
         }
+
+        return this.name;
     }
     public void asignarVida(int hit_points){
         if(hit_points < 0){

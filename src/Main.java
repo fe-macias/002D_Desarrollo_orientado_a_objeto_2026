@@ -22,7 +22,7 @@ public class Main {
                     System.out.println("Creating character");
                     // Nombre del personae
                     System.out.println("Enter the name :");
-                    player_character.name = entrada_input.nextLine();
+                    player_character.validarNombre(entrada_input.nextLine());
                     // health character
                     System.out.println("Ingrese los puntos de vida:");
                     player_character.hit_points = Integer.parseInt(entrada_input.nextLine());
