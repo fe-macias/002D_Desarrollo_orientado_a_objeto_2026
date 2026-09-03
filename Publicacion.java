@@ -4,22 +4,30 @@ public class Publicacion {
     private String fechaCreacion;
     int likes;
     protected boolean estaActivo;
+    // Protected que solo las clases hijos puedan acceder a ellas
+    //cuando un metodo se llama igual que la clase se llama se llama constructor
     public Publicacion(String id , String autor){
-        System.out.println("Cosas");
+        this.id = id;
+        this.autor = id;
+        this.likes = 0;
     }
     public String getId() {
-        return id;
+        return this.id;
     }
     public void setId(String id) {
         this.id = id;
     }
     public String getAutor() {
-        return autor;
+        return this.autor;
     }
     public void setAutor(String autor) {
-        if(autor == null || autor.isBlank()){
-            System.out.println("Autor no puede estar en blanco o no puede tener espacios");
+        if(autor.length() > 20){
+            System.err.println("Autor no puede estar en blanco o no puede tener espacios");
             this.autor = null;
+        }else if (autor.isEmpty()) {
+            System.err.println("Error");
+        }else{
+            this.autor = autor;
         }
     }
     public String getFechaCreacion() {
@@ -32,11 +40,7 @@ public class Publicacion {
         return likes;
     }
     public void setLikes(int likes) {
-        if (likes < 0 ){
-            this.likes = 0;
-        } else {
-            this.likes = likes;
-        }
+        this.likes += 1;
     }
     public boolean isEstaActivo() {
         return estaActivo;
