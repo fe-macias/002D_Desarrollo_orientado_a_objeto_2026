@@ -1,26 +1,61 @@
+import java.util.Scanner;
+import java.util.ArrayList;
 public class Main {
-    
+    private static Scanner sc = new Scanner(System.in);
+    private static ArrayList<Producto> inventario =  new ArrayList<>();
     public static void main(String[] args) {
-        // Alumno 1 no recibe datos de la clase
-        Alumno alu1 = new Alumno();
-        // Alumno 2 recibe datos de la clase Alumno
-        Alumno alu2 = new Alumno(5 ,"Fernando" , "Macias");
-        // traer un getter llamando al metodo getter de mi clase Alumno
-        System.out.println("la id de alumno 2 es :" + alu2.getId());
-        System.out.println("El nombre del alumno es :" + alu2.getNombre());
-        System.out.println("El apellido del alumno es :" + alu2.getApellido());
+        boolean flag = true;
+        while (flag) {
+            mostrarMenuPrincipal();
+            System.out.print("Seleccione una opcion :");
+            String opcion = sc.nextLine();
+            switch (opcion) {
+                case "1":
+                    // Registrar
+                    break;
+                case "2":
+                    // Listar
+                    break;
+                case "3":
+                    // Buscar
+                    break;
+                case "4":
+                    // Vender
+                    break;
+                case "5":
+                    // Resumen
+                    break;
+                case "6":
+                    // Y las mas obvia salir 
+                    System.out.println("Hasta luego");
+                    flag = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    public static void mostrarMenuPrincipal(){
+        System.out.println("====tienda de videojuegos====");
+        System.out.println("1 . Registrar producto");
+        System.out.println("2 .  Listar inventario");
+        System.out.println("3 . Buscar producto por nombre");
+        System.out.println("4 . Vender producto");
+        System.out.println("5 . Resumen de inventario");
+        System.out.println("6 . Salir");
+    }
+    public static void registrarProducto(){
+        System.out.println("1 . Producto Fisico");
+        System.out.println("2 . Producto Digital");
+        System.out.println("Seleccione el tipo de formato : ");
+        String tipo = sc.nextLine();   
+        if (tipo.equals("1")) {
+            
+        } else if (tipo.equals("2")){
 
-        //Seteo alu1 con el metodo set , le paso el parametro que quiero y el que corresponda a cada caso si es String , int , float , double
-        alu1.setId(2);
-        alu1.setNombre("Hola");
-        alu1.setApellido("Mundo");
-
-        // Despues lo mando a mostrar en consola con System.out
-
-        System.out.println("la id de alumno 1 es :" + alu1.getId());
-        System.out.println("El nombre del alumno es :" + alu1.getNombre());
-        System.out.println("El nombre del alumno es :" + alu1.getApellido());
-
+        }else{
+            System.err.println("Opcion invalida , vuelva a intentarlo");
+        }
 
     }
 }
