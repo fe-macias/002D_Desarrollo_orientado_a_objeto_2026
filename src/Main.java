@@ -12,9 +12,11 @@ public class Main {
             switch (opcion) {
                 case "1":
                     // Registrar
+                    registrarProducto();
                     break;
                 case "2":
                     // Listar
+                    listarInventario();
                     break;
                 case "3":
                     // Buscar
@@ -50,12 +52,40 @@ public class Main {
         System.out.println("Seleccione el tipo de formato : ");
         String tipo = sc.nextLine();   
         if (tipo.equals("1")) {
-            
-        } else if (tipo.equals("2")){
+            System.out.println("Ingrese el nombre del producto");
+            String nombreProducto = sc.nextLine();
+            System.out.println("Precio base del producto");
+            int precioBase = Integer.parseInt(sc.nextLine());
+            System.out.println("Ingrese el costo de envio del producto");
+            int costoEnvio = Integer.parseInt(sc.nextLine());
+            System.out.println("Ingrese el stock del producto");
+            int stock = Integer.parseInt(sc.nextLine());
+            Producto producto = new ProductoFisico(nombreProducto, stock, precioBase, costoEnvio);
+            inventario.add(producto);
 
+        } else if (tipo.equals("2")){
+            System.out.println("Ingrese el nombre del producto digital");
+            String nombreProductoDigital = sc.nextLine();
+            System.out.println("Precio base del producto");
+            int precioBase = Integer.parseInt(sc.nextLine());
+            System.out.println("Ingrese el descuento del producto");
+            int descuento = Integer.parseInt(sc.nextLine());
+            System.out.println("Ingrese la plataforma del producto");
+            String plataforma = sc.nextLine();
+            System.out.println("Ingrese el stock del producto");
+            int stock = Integer.parseInt(sc.nextLine());
+            Producto productodigital = new ProductoDigital(nombreProductoDigital, stock, precioBase, descuento, plataforma);
+            inventario.add(productodigital);
         }else{
             System.err.println("Opcion invalida , vuelva a intentarlo");
         }
-
+        }
+    public static void listarInventario(){
+        for (Producto p : inventario) {
+            System.out.println(p.mostrarInfo());
+        }
+    }
+    public static void buscarProducto(){
+        
     }
 }
