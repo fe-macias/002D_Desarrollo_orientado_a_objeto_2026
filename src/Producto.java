@@ -20,7 +20,9 @@ public abstract class Producto  {
     public void setStock(int stock) {
         this.stock = stock;
     }
+    
     public abstract int calcularPrecioFinal();
+    
     public String mostrarInfo(){
         return "Nombre: " + this.nombre + " | Precio base: " + this.precioBase + " | Precio final: " + calcularPrecioFinal() + " | Stock: " + this.stock;
     }
